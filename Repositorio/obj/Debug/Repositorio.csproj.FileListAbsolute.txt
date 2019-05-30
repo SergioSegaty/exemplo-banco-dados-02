@@ -1,0 +1,9 @@
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\bin\Debug\Repositorio.dll
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\bin\Debug\Repositorio.pdb
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\bin\Debug\Model.dll
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\bin\Debug\Model.pdb
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\obj\Debug\Repositorio.csprojAssemblyReference.cache
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\obj\Debug\Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\obj\Debug\Repositorio.csproj.CopyComplete
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\obj\Debug\Repositorio.dll
+C:\Users\62110\Desktop\C#\ExemploBandoDados02\Repositorio\obj\Debug\Repositorio.pdb
