@@ -86,6 +86,7 @@ namespace Repositorio
             {
                 DataRow linha = tabela.Rows[0];
                 Filme filme = new Filme();
+
                 filme.Id = Convert.ToInt32(linha["id"]);
                 filme.Nome = linha["nome"].ToString();
                 filme.Avaliacao = Convert.ToInt32(linha["avaliacao"]);
@@ -93,6 +94,7 @@ namespace Repositorio
                 filme.Categoria = linha["categoria"].ToString();
                 filme.Curtiu = Convert.ToBoolean(linha["curtiu"]);
                 filme.TemSequencia = Convert.ToBoolean(linha["tem_sequencia"]);
+
                 return filme;
             }
 
@@ -123,6 +125,22 @@ namespace Repositorio
             comando.ExecuteNonQuery();
             conexao.Close();
 
+
+        }
+
+        public void Deletar(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = CadeiaDeConexao;
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = @"DELETE FROM filmes WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
+            comando.ExecuteNonQuery();
+            conexao.Close();
 
         }
     }
