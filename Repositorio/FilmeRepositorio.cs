@@ -41,6 +41,7 @@ namespace Repositorio
             // E Executa os comandos no BD
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
+            conexao.Close();
 
             List<Filme> filmes = new List<Filme>();
 
@@ -62,7 +63,6 @@ namespace Repositorio
                 // Adiciona na lista filmes (new List<Filmes>) o filme em i.
                 filmes.Add(filme);
             }
-            conexao.Close();
             return filmes;
         }
 
@@ -80,6 +80,7 @@ namespace Repositorio
             comando.Parameters.AddWithValue("@ID", id);
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
+            conexao.Close();
 
             if (tabela.Rows.Count == 1)
             {
