@@ -13,7 +13,7 @@ namespace Model
         public int Id;
         public string Categoria;
         public bool Curtiu;
-        public DateTime Duração;
+        public DateTime Duracao;
         public decimal Avaliacao;
         public bool TemSequencia;
     }

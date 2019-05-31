@@ -55,7 +55,7 @@ namespace Repositorio
                 filme.Id = Convert.ToInt32(linha["id"]);
                 filme.Nome = linha["nome"].ToString();
                 filme.Avaliacao = Convert.ToDecimal(linha["avaliacao"]);
-                filme.Duração = Convert.ToDateTime(linha["duracao"]);
+                filme.Duracao = Convert.ToDateTime(linha["duracao"]);
                 filme.Curtiu = Convert.ToBoolean(linha["curtiu"]);
                 filme.Categoria = linha["categoria"].ToString();
                 filme.TemSequencia = Convert.ToBoolean(linha["tem_sequencia"]);
@@ -64,6 +64,65 @@ namespace Repositorio
             }
             conexao.Close();
             return filmes;
+        }
+
+        public Filme ObterPeloID(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = CadeiaDeConexao;
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = @"SELECT * FROM filmes 
+            WHERE id = @ID";
+
+            comando.Parameters.AddWithValue("@ID", id);
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+
+            if (tabela.Rows.Count == 1)
+            {
+                DataRow linha = tabela.Rows[0];
+                Filme filme = new Filme();
+                filme.Id = Convert.ToInt32(linha["id"]);
+                filme.Nome = linha["nome"].ToString();
+                filme.Avaliacao = Convert.ToInt32(linha["avaliacao"]);
+                filme.Duracao = Convert.ToDateTime(linha["duracao"]);
+                filme.Categoria = linha["categoria"].ToString();
+                filme.Curtiu = Convert.ToBoolean(linha["curtiu"]);
+                filme.TemSequencia = Convert.ToBoolean(linha["tem_sequencia"]);
+                return filme;
+            }
+
+            return null;
+        }
+
+        public void Inserir(Filme filme)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = CadeiaDeConexao;
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = @"INSERT INTO filmes 
+            (nome, categoria, curtiu, duracao, avaliacao, tem_senquencia)
+
+            Values
+            (@NOME, @CATEGORIA, @CURTIU, @DURACAO, @AVALIACAO, @TEM_SEQUENCIA)";
+
+            comando.Parameters.AddWithValue("@NOME", filme.Nome);
+            comando.Parameters.AddWithValue("@CATEGORIA", filme.Categoria);
+            comando.Parameters.AddWithValue("@CURTIU", filme.Curtiu);
+            comando.Parameters.AddWithValue("@DURACAO", filme.Duracao);
+            comando.Parameters.AddWithValue("@AVALIACAO", filme.Avaliacao);
+            comando.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
+
+            comando.ExecuteNonQuery();
+            conexao.Close();
+
+
         }
     }
 }
