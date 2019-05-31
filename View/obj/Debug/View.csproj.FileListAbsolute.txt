@@ -21,10 +21,11 @@ C:\Users\62110\Desktop\exemplo-banco-dados-02\View\bin\Debug\Repositorio.dll
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\bin\Debug\Model.pdb
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\bin\Debug\Repositorio.pdb
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.csprojAssemblyReference.cache
-C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.Form1.resources
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.Properties.Resources.resources
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.csproj.GenerateResource.cache
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.csproj.CoreCompileInputs.cache
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.csproj.CopyComplete
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.exe
 C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.pdb
+C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.FilmeCadastro.resources
+C:\Users\62110\Desktop\exemplo-banco-dados-02\View\obj\Debug\View.FilmeLista.resources

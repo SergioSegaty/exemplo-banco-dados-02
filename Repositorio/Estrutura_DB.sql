@@ -1,4 +1,5 @@
-﻿CREATE TABLE filmes (
+﻿DROP TABLE filmes;
+CREATE TABLE filmes (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(100) NOT NULL,
 	avaliacao DECIMAL(3,1),

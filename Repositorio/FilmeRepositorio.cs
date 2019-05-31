@@ -110,7 +110,7 @@ namespace Repositorio
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
             comando.CommandText = @"INSERT INTO filmes 
-            (nome, categoria, curtiu, duracao, avaliacao, tem_senquencia)
+            (nome, categoria, curtiu, duracao, avaliacao, tem_sequencia)
 
             Values
             (@NOME, @CATEGORIA, @CURTIU, @DURACAO, @AVALIACAO, @TEM_SEQUENCIA)";

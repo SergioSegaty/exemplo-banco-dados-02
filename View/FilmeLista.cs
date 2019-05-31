@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class Form1 : Form
+    public partial class FilmeLista : Form
     {
-        public Form1()
+        public FilmeLista()
         {
             InitializeComponent();
         }
@@ -25,8 +25,24 @@ namespace View
 
         private void Form1_Load(object sender, EventArgs e)
         {
+        }
+
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            FilmeRepositorio filmRep = new FilmeRepositorio();
+
+            filmRep.Deletar(id);
+            AtualizarTabela();
+        }
+
+
+        public void AtualizarTabela()
+        {
             FilmeRepositorio repositorio = new FilmeRepositorio();
-            List<Filme> filmes  = repositorio.ObterTodos();
+            List<Filme> filmes = repositorio.ObterTodos();
             dataGridView1.Rows.Clear();
 
             for (int i = 0; i < filmes.Count; i++)
@@ -37,7 +53,17 @@ namespace View
                     filme.Id, filme.Nome, filme.Avaliacao, filme.Categoria
                 });
             }
+        }
 
+        private void btnCadastar_Click(object sender, EventArgs e)
+        {
+            FilmeCadastro form = new FilmeCadastro();
+            form.ShowDialog();
+        }
+
+        private void FilmeLista_Activated(object sender, EventArgs e)
+        {
+            AtualizarTabela();
         }
     }
 }
