@@ -14,6 +14,8 @@ namespace View
 {
     public partial class FilmeLista : Form
     {
+        public object FilmeEditar { get; private set; }
+
         public FilmeLista()
         {
             InitializeComponent();
@@ -64,6 +66,19 @@ namespace View
         private void FilmeLista_Activated(object sender, EventArgs e)
         {
             AtualizarTabela();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            FilmeRepositorio repositorio = new FilmeRepositorio();
+            Filme filme = repositorio.ObterPeloID(id);
+
+            EditarFilme editarFilme = new EditarFilme(filme);
+            editarFilme.ShowDialog();
+             
+
         }
     }
 }

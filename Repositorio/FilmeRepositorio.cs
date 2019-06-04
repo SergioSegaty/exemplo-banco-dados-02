@@ -11,7 +11,7 @@ namespace Repositorio
 {
     public class FilmeRepositorio
     {
-        string CadeiaDeConexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\62110\Documents\ExemploBancoDados02.mdf;Integrated Security=True;Connect Timeout=30";
+        string CadeiaDeConexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\62110\Documents\ExemploDB02.mdf;Integrated Security=True;Connect Timeout=30";
 
         /*
          Metódo que irá retornar os dados do filme (List<Filme>), da tabela  de filmes. 
@@ -152,14 +152,7 @@ namespace Repositorio
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"UPDATE filmes SET
-            nome = @NOME,
-            categoria = @CATEGORIA,
-            curtiu = @CURTIU,
-            duracao = @DURACAO,
-            avaliacao = @AVALIACAO,
-            tem_sequencia = @TEM_SEQUENCIA
-            WHERE id = @ID";
+            comando.CommandText = @"UPDATE filmes SET nome = @NOME, categoria = @CATEGORIA, curtiu = @CURTIU, duracao = @DURACAO, avaliacao = @AVALIACAO, tem_sequencia = @TEM_SEQUENCIA WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@NOME", filme.Nome);
             comando.Parameters.AddWithValue("@CATEGORIA", filme.Categoria);
